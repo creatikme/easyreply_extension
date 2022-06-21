@@ -1,0 +1,45 @@
+{
+    "name": "EasyReply",
+    "version": "1.0",
+    "description": "EasyReply",
+    "permissions": [
+        "https://mail.google.com/*",
+        "activeTab",
+        "tabs",
+        "clipboardWrite",
+        "storage"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "browser_action": {
+        "default_icon": "images/icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://mail.google.com/*"
+            ],
+            "css": [
+                "thirdParty/dropzone.min.css"
+            ],
+            "js": [
+                "thirdParty/jquery.min.js",
+                "thirdParty/ckeditor.js",
+                "thirdParty/dropzone.min.js",
+                "insert.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": [
+        "thirdParty/dropzone.min.css",
+        "thirdParty/ckeditor.js",
+        "thirdParty/jquery.min.js",
+        "thirdParty/dropzone.min.js"
+    ],
+    "manifest_version": 2
+}
